@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-    private bool isHolding = false;
+    public bool isHolding = false;
     [SerializeField] private GameObject _startingSceneTransition;
     [SerializeField] private GameObject _endingSceneTransition;
 
