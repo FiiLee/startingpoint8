@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3235080973423585193}
   - component: {fileID: 4030663235708315873}
   - component: {fileID: 7002487866180968476}
+  - component: {fileID: 1955461972880751668}
   m_Layer: 0
   m_Name: indomie dus
   m_TagString: Untagged
@@ -144,3 +145,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameTag: {fileID: 1604065150196982325, guid: 83fd124c5f279c142bc8e35cbe2c175d, type: 3}
+--- !u!114 &1955461972880751668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113892935258805256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec26d38bd9986a45a04c251dc516b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keranjang: {fileID: 5113892935258805256}
+  miePrefab: {fileID: 0}
+  flyingSpeed: 5
