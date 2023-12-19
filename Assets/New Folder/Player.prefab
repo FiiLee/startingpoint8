@@ -336,8 +336,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: -1685608803
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &4800574529310408489
 MonoBehaviour:
@@ -1045,7 +1045,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   sprintSpeed: 7
-  jumpHigh: 7
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -1177,6 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6913e0f0e9de48b4bb3c3c51b5cce8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemText: {fileID: 0}
 --- !u!1001 &5157299879787074045
 PrefabInstance:
   m_ObjectHideFlags: 0
