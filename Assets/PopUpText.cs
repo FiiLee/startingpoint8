@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PopUpText : MonoBehaviour
 {
     GameObject player;
-    [SerializeField] public Text PickUpText;
+    [SerializeField] public GameObject PickUpText;
 
     private void Start()
     {
