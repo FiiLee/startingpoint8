@@ -6,7 +6,6 @@ public class Mov : MonoBehaviour
 {
     public float speed;
     public float sprintSpeed;
-    public float jumpHigh;
     public LayerMask whatIsGround;
     public Transform checkGroundPosition;
     public Image StaminaBar;
@@ -23,7 +22,6 @@ public class Mov : MonoBehaviour
     private SpriteRenderer SpriteRenderer;
     private bool isSprinting = false;
     private Coroutine StaminaCharge;
-    private Coroutine staminaBarCoroutine;
     private Canvas staminaCanvas;
 
     void Start()
@@ -32,7 +30,6 @@ public class Mov : MonoBehaviour
         SpriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         staminaCanvas = StaminaBar.GetComponentInParent<Canvas>();
-        staminaCanvas.enabled = false; // Menyembunyikan StaminaBar pada awalnya
     }
 
     void FixedUpdate()
@@ -48,26 +45,23 @@ public class Mov : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift) && isGrounded && Stamina > 0)
         {
+            Debug.Log("Shift Pressed");
             isSprinting = true;
             Stamina -= RunningStaminaCost * Time.deltaTime;
             if (Stamina < 0) Stamina = 0;
             StaminaBar.fillAmount = Stamina / MaxStamina;
 
-            if (staminaBarCoroutine != null)
+            if (StaminaCharge != null)
             {
-                StopCoroutine(staminaBarCoroutine);
+                StopCoroutine(StaminaCharge);
             }
 
             staminaCanvas.enabled = true;
-            staminaBarCoroutine = StartCoroutine(HideStaminaBarAfterDelay(2f));
-
-            if (StaminaCharge != null) StopCoroutine(StaminaCharge);
             StaminaCharge = StartCoroutine(RechargeStamina());
         }
         else
         {
             isSprinting = false;
-            staminaCanvas.enabled = false;
         }
 
         float currentSpeed = isSprinting ? sprintSpeed : speed;
@@ -75,12 +69,6 @@ public class Mov : MonoBehaviour
         if (isGrounded)
         {
             rb2D.velocity = new Vector2(x * currentSpeed, rb2D.velocity.y);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            Jumping();
-            animator.SetBool("isJumping", true);
         }
 
         if (x > 0)
@@ -91,11 +79,9 @@ public class Mov : MonoBehaviour
         {
             SpriteRenderer.flipX = true;
         }
-    }
 
-    void Jumping()
-    {
-        rb2D.velocity = new Vector2(rb2D.velocity.x, jumpHigh);
+        // Menetapkan parameter animator untuk animasi lari
+        animator.SetBool("isSprinting", isSprinting);
     }
 
     private IEnumerator RechargeStamina()
@@ -110,13 +96,5 @@ public class Mov : MonoBehaviour
             staminaCanvas.enabled = true;
             yield return new WaitForSeconds(.1f);
         }
-
-        staminaCanvas.enabled = false;
-    }
-
-    private IEnumerator HideStaminaBarAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(0.2f);
-        staminaCanvas.enabled = false;
     }
 }

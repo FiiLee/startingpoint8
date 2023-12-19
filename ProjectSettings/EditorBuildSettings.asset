@@ -8,18 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main menu.unity
     guid: 8a2a78b78e2ad4a4c8f3e0f14815215f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TheRoad.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Store.unity
     guid: 0fb7d8f441faa704385e91cc59c89515
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Goingback.unity
     guid: 999660b676e459b4ba41292a209bad8c
   - enabled: 1
     path: Assets/Scenes/House.unity
-    guid: 943f32b731842974e9a9d90c31575d37
+    guid: f0c90c746e9c9e445ae589e6deac4b96
   - enabled: 1
     path: Assets/Scenes/Rak2.unity
     guid: f3a90008158d37e47b7c88babcee95ef
