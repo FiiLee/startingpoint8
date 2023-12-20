@@ -1,19 +1,21 @@
 using UnityEngine;
 using TMPro;
+using System.Diagnostics;
+using System;
 
 public class QuestManager : MonoBehaviour
 {
     public GameObject shoppingListCanvas;
     public TextMeshProUGUI[] shoppingItems;
-
     private string[] itemList = { "Susu", "Indomie", "Garam", "Sarden", "Micin", "Penyedap Rasa", "Kecap", "Mie Cup" };
-    private ItemManager itemManager;
-    
+    public ItemManager itemManager;
+    private string[] originalItemList;
     private void Start()
     {
         shoppingListCanvas.SetActive(false);
-        
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player"); 
+        originalItemList = itemList.Clone() as string[];
+
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
             itemManager = playerObject.GetComponent<ItemManager>();
@@ -21,14 +23,14 @@ public class QuestManager : MonoBehaviour
 
         if (itemManager == null)
         {
-            Debug.LogError("Tidak bisa menemukan ItemManager pada objek player.");
+            UnityEngine.Debug.LogError("Tidak bisa menemukan ItemManager pada objek player.");
         }
         else
         {
-            UpdateItemCountText(); 
+            UpdateItemCountText();
         }
     }
-    
+
     public static QuestManager Instance;
 
     private void Awake()
@@ -50,59 +52,73 @@ public class QuestManager : MonoBehaviour
     private void ShuffleAndDisplayItems()
     {
         ShuffleItems();
-    // Menampilkan 4 item yang diacak ke dalam list belanja
+        // Menampilkan 4 item yang diacak ke dalam list belanja
         for (int i = 0; i < shoppingItems.Length; i++)
         {
             int count = 0;
 
-        // Ambil nilai aktual dari ItemManager berdasarkan nama item
-        switch (itemList[i])
-        {
-            case "Indomie":
-                count = itemManager.indomieCount;
-                break;
-            case "Susu":
-                count = itemManager.susuCount;
-                break;
-            case "Sarden":
-                count = itemManager.sardenCount;
-                break;
-            case "Micin":
-                count = itemManager.micinCount;
-                break;
-            case "Kecap":
-                count = itemManager.kecapCount;
-                break;
-            case "Penyedap Rasa":
-                count = itemManager.penyedapRasaCount;
-                break;
-            case "Mie Cup":
-                count = itemManager.mieCupCount;
-                break;
-            case "Garam":
-                count = itemManager.garamCount;
-                break;        
-            // Tambahkan kasus lain untuk item lainnya
-        }
-        
-        int requiredCount = Random.Range(1, 11);
-        count = Mathf.Min(count, requiredCount);
-        shoppingItems[i].text = itemList[i] + " " + count + "/" + requiredCount; // Menampilkan nama barang dan jumlah yang harus diambil
+
+            // Ambil nilai aktual dari ItemManager berdasarkan nama item
+            switch (originalItemList[i])
+            {
+                case "Indomie":
+                    count = itemManager.indomieCount;
+                    break;
+                case "Susu":
+                    count = itemManager.susuCount;
+                    break;
+                case "Sarden":
+                    count = itemManager.sardenCount;
+                    break;
+                case "Micin":
+                    count = itemManager.micinCount;
+                    break;
+                case "Kecap":
+                    count = itemManager.kecapCount;
+                    break;
+                case "Penyedap Rasa":
+                    count = itemManager.penyedapRasaCount;
+                    break;
+                case "Mie Cup":
+                    count = itemManager.mieCupCount;
+                    break;
+                case "Garam":
+                    count = itemManager.garamCount;
+                    break;
+                    // Tambahkan kasus lain untuk item lainnya
+            }
+
+            int requiredCount = UnityEngine.Random.Range(1, 11);
+            //count = Mathf.Min(count, requiredCount);
+            shoppingItems[i].text = originalItemList[i] + " " + count + "/" + requiredCount;
         }
     }
 
-     void UpdateItemCountText()
+    public void UpdateItemCountText()
     {
         // Mengambil nilai indomieCount dari ItemManager dan menampilkannya di console
-        Debug.Log("Jumlah Indomie: " + itemManager.indomieCount);
+        UnityEngine.Debug.Log("Jumlah Indomie: " + itemManager.indomieCount);
+
+        for (int i = 0; i < shoppingItems.Length; i++)
+        {
+            int index = shoppingItems[i].text.IndexOf("Indomie", System.StringComparison.OrdinalIgnoreCase);
+            if (index != -1)
+            {
+                shoppingItems[i].text = "Indomie" + itemManager.indomieCount + "/" + shoppingItems[i].text;
+                UnityEngine.Debug.Log("item tereset");
+            }
+        }
     }
+
 
     private void ShuffleItems()
     {
+        itemList = originalItemList.Clone() as string[];
+
         // Mengacak item dengan menggunakan algoritma Fisher-Yates
         for (int i = 0; i < itemList.Length - 1; i++)
         {
-            int randomIndex = Random.Range(i, itemList.Length);
+            int randomIndex = UnityEngine.Random.Range(i, itemList.Length);
             string temp = itemList[i];
             itemList[i] = itemList[randomIndex];
             itemList[randomIndex] = temp;
