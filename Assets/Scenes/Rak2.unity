@@ -5148,6 +5148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ListBelanja
       objectReference: {fileID: 0}
+    - target: {fileID: 8544802699676585734, guid: 0a0a4b18b8188844f9b3f2c3621e1049, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5362,7 +5366,7 @@ Transform:
   m_GameObject: {fileID: 1691255260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.217138, y: 0.3163129, z: -2}
+  m_LocalPosition: {x: -4.5384736, y: 0.318241, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8495,6 +8499,14 @@ PrefabInstance:
       objectReference: {fileID: 616358090}
     - target: {fileID: 1955461972880751668, guid: 4093fe1fb8a4a954bb479ff630e33fbd, type: 3}
       propertyPath: miePrefab
+      value: 
+      objectReference: {fileID: 230989962}
+    - target: {fileID: 1955461972880751668, guid: 4093fe1fb8a4a954bb479ff630e33fbd, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 147541914}
+    - target: {fileID: 1955461972880751668, guid: 4093fe1fb8a4a954bb479ff630e33fbd, type: 3}
+      propertyPath: spawnedObjectPrefab
       value: 
       objectReference: {fileID: 230989962}
     - target: {fileID: 2521149342721450777, guid: 4093fe1fb8a4a954bb479ff630e33fbd, type: 3}

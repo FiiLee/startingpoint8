@@ -154,9 +154,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5113892935258805256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec26d38bd9986a45a04c251dc516b9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f0b2cf3d049e924886fb3beec54e92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keranjang: {fileID: 5113892935258805256}
-  miePrefab: {fileID: 0}
-  flyingSpeed: 5
+  playerTransform: {fileID: 0}
+  spawnedObjectPrefab: {fileID: 0}
