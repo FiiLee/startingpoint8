@@ -8,7 +8,7 @@ public class TutorialManager : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < popUps.Length; i++)
+        for (int i = 1; i < popUps.Length; i++)
         {
             popUps[i].SetActive(i == popUpsIndex);
         }

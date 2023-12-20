@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4030663235708315873}
   - component: {fileID: 7002487866180968476}
   - component: {fileID: 1955461972880751668}
+  - component: {fileID: 4998917755655080073}
   m_Layer: 0
   m_Name: indomie dus
   m_TagString: Untagged
@@ -159,3 +160,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   spawnedObjectPrefab: {fileID: 0}
+--- !u!114 &4998917755655080073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113892935258805256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7624cd84dc878764180de11af1b01671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

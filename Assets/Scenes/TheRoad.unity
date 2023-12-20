@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!224 &162864513 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8473958912051753971, guid: ea4b2aee403392a4fba0a5356ee72069, type: 3}
-  m_PrefabInstance: {fileID: 7723258143069837204}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &304713081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1604842554427349282, guid: 8cc02daf438d5cb4395d0a8bb0ef5068, type: 3}
@@ -1508,7 +1503,7 @@ RectTransform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 162864513}
+  m_Father: {fileID: 1024231594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.500282}
@@ -2380,11 +2375,19 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1293798188454758794, guid: 5f827e26e4576974d970c09c7fec0b68, type: 3}
+      propertyPath: popUps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293798188454758794, guid: 5f827e26e4576974d970c09c7fec0b68, type: 3}
       propertyPath: popUps.Array.data[0]
       value: 
       objectReference: {fileID: 304713081}
     - target: {fileID: 1293798188454758794, guid: 5f827e26e4576974d970c09c7fec0b68, type: 3}
       propertyPath: popUps.Array.data[1]
+      value: 
+      objectReference: {fileID: 304713081}
+    - target: {fileID: 1293798188454758794, guid: 5f827e26e4576974d970c09c7fec0b68, type: 3}
+      propertyPath: popUps.Array.data[2]
       value: 
       objectReference: {fileID: 895309137}
     - target: {fileID: 7488441928487724998, guid: 5f827e26e4576974d970c09c7fec0b68, type: 3}
@@ -2444,6 +2447,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162643590024800973, guid: 8cc02daf438d5cb4395d0a8bb0ef5068, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462256911226903833, guid: 8cc02daf438d5cb4395d0a8bb0ef5068, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2467944655633719281, guid: 8cc02daf438d5cb4395d0a8bb0ef5068, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -2624,8 +2635,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8473958912051753971, guid: ea4b2aee403392a4fba0a5356ee72069, type: 3}
-      insertIndex: 0
+    - targetCorrespondingSourceObject: {fileID: 4499110631978584373, guid: ea4b2aee403392a4fba0a5356ee72069, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1382183889}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4b2aee403392a4fba0a5356ee72069, type: 3}
